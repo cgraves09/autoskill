@@ -1,0 +1,172 @@
+[
+  {
+    "id": "explicit-remind-me",
+    "category": "positive",
+    "user_message": "Hey can you remind me to call the dentist tomorrow?",
+    "expected_behavior": "cron_created",
+    "expected_phrases": ["remind"],
+    "notes": "Direct reminder request — must create a one-shot cron with --run-at for tomorrow 8am"
+  },
+  {
+    "id": "explicit-check-later",
+    "category": "positive",
+    "user_message": "Check on the deployment status in 30 minutes and let me know",
+    "expected_behavior": "cron_created",
+    "expected_phrases": ["let me know", "check"],
+    "notes": "Explicit future check — cron with --run-at +30M"
+  },
+  {
+    "id": "timed-10min",
+    "category": "positive",
+    "user_message": "Remind me in 10 minutes to stretch",
+    "expected_behavior": "cron_created",
+    "expected_phrases": ["remind"],
+    "notes": "Explicit 10-minute reminder — --run-at with +10M offset"
+  },
+  {
+    "id": "timed-2hours",
+    "category": "positive",
+    "user_message": "Check on the backup job in 2 hours",
+    "expected_behavior": "cron_created",
+    "expected_phrases": ["check"],
+    "notes": "Explicit 2-hour check — --run-at with +2H offset"
+  },
+  {
+    "id": "timed-tomorrow",
+    "category": "positive",
+    "user_message": "Remind me tomorrow to review the PR",
+    "expected_behavior": "cron_created",
+    "expected_phrases": ["remind"],
+    "notes": "Tomorrow = next day 8:00 AM ET"
+  },
+  {
+    "id": "implicit-ill-follow-up",
+    "category": "implicit",
+    "user_message": "Did the email to the vendor go out?",
+    "agent_should_say": "I'll check on that and follow up",
+    "expected_behavior": "cron_created",
+    "expected_phrases": ["I'll check", "follow up"],
+    "notes": "Agent commits to checking — must create cron before responding"
+  },
+  {
+    "id": "implicit-circle-back",
+    "category": "implicit",
+    "user_message": "How's the migration going?",
+    "agent_should_say": "Let me circle back on this after the job finishes",
+    "expected_behavior": "cron_created",
+    "expected_phrases": ["circle back"],
+    "notes": "Circle back = future commitment = cron required"
+  },
+  {
+    "id": "implicit-keep-eye",
+    "category": "implicit",
+    "user_message": "The server load has been spiking lately",
+    "agent_should_say": "I'll keep an eye on it and alert you if it spikes again",
+    "expected_behavior": "cron_created",
+    "expected_phrases": ["keep an eye", "alert you"],
+    "notes": "Monitoring commitment — needs a recurring or one-shot cron"
+  },
+  {
+    "id": "implicit-ping-you",
+    "category": "implicit",
+    "user_message": "When does the SSL cert expire?",
+    "agent_should_say": "It expires next week, I'll ping you before it does",
+    "expected_behavior": "cron_created",
+    "expected_phrases": ["I'll ping you"],
+    "notes": "Proactive ping commitment"
+  },
+  {
+    "id": "implicit-have-ready",
+    "category": "implicit",
+    "user_message": "I need the quarterly report for the board meeting",
+    "agent_should_say": "I'll have that ready by end of day",
+    "expected_behavior": "cron_created",
+    "expected_phrases": ["I'll have that ready"],
+    "notes": "Delivery commitment = cron to follow up"
+  },
+  {
+    "id": "implicit-look-into",
+    "category": "implicit",
+    "user_message": "The build is failing on CI, can you look into it?",
+    "agent_should_say": "I'll look into that and get back to you",
+    "expected_behavior": "cron_created",
+    "expected_phrases": ["I'll look into", "get back to you"],
+    "notes": "Agent commits to investigating and reporting back"
+  },
+  {
+    "id": "vague-soon",
+    "category": "edge",
+    "user_message": "Can you look into why notifications aren't working?",
+    "agent_should_say": "Sure, I'll look into it and let you know soon",
+    "expected_behavior": "cron_created",
+    "expected_phrases": ["I'll look into", "let you know"],
+    "notes": "Vague timeframe 'soon' — should default to 5 min per skill rules"
+  },
+  {
+    "id": "vague-later",
+    "category": "edge",
+    "user_message": "The analytics dashboard is showing weird numbers",
+    "agent_should_say": "I'll dig into this and get back to you later",
+    "expected_behavior": "cron_created",
+    "expected_phrases": ["get back to you later"],
+    "notes": "'Later' = 5 min default"
+  },
+  {
+    "id": "buried-commitment",
+    "category": "complex",
+    "user_message": "Great work on the feature. By the way, the staging server seems slow, can you keep an eye on it?",
+    "agent_should_say": "Thanks! I'll keep an eye on the staging server and let you know if anything looks off",
+    "expected_behavior": "cron_created",
+    "expected_phrases": ["keep an eye", "let you know"],
+    "notes": "Commitment buried in praise — easy to miss"
+  },
+  {
+    "id": "conditional-commitment",
+    "category": "complex",
+    "user_message": "If the tests pass, deploy to staging and let me know",
+    "expected_behavior": "cron_created",
+    "expected_phrases": ["let me know"],
+    "notes": "Conditional but still a commitment to report back"
+  },
+  {
+    "id": "multi-commitment",
+    "category": "complex",
+    "user_message": "Can you check on the deploy and also remind me to update the docs later?",
+    "expected_behavior": "cron_created",
+    "expected_phrases": ["check", "remind"],
+    "notes": "Two commitments in one message — at least one cron needed"
+  },
+  {
+    "id": "subtle-will-do",
+    "category": "edge",
+    "user_message": "Make sure the cron jobs are all healthy tonight",
+    "agent_should_say": "Will do, I'll check on them this evening",
+    "expected_behavior": "cron_created",
+    "expected_phrases": ["I'll check"],
+    "notes": "Subtle 'will do' + future check"
+  },
+  {
+    "id": "negative-simple-math",
+    "category": "negative",
+    "user_message": "What's 2 + 2?",
+    "expected_behavior": "no_cron",
+    "expected_phrases": [],
+    "notes": "No commitment — should NOT create a cron"
+  },
+  {
+    "id": "negative-info-request",
+    "category": "negative",
+    "user_message": "What time zone are we in?",
+    "expected_behavior": "no_cron",
+    "expected_phrases": [],
+    "notes": "Simple info request — no cron needed"
+  },
+  {
+    "id": "negative-immediate-action",
+    "category": "negative",
+    "user_message": "Send that email to the team now",
+    "expected_behavior": "no_cron",
+    "expected_phrases": [],
+    "notes": "Immediate action, not a future commitment — no cron"
+  }
+]

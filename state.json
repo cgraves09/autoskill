@@ -1,0 +1,24 @@
+{
+  "iteration": 5,
+  "best_rate": 80.0,
+  "consecutive_discards": 4,
+  "mutations_tried": {
+    "add_constraint": {
+      "kept": 0,
+      "discarded": 1
+    },
+    "add_negative_example": {
+      "kept": 0,
+      "discarded": 1
+    },
+    "tighten_language": {
+      "kept": 0,
+      "discarded": 1
+    },
+    "restructure": {
+      "kept": 0,
+      "discarded": 1
+    }
+  },
+  "best_commit": "2cd119f"
+}

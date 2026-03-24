@@ -1,0 +1,175 @@
+{
+  "skill": "/Users/cozmos/.openclaw-donna/skills/auto-reminder/SKILL.md",
+  "timestamp": "2026-03-24T06:42:31.234662",
+  "skill_hash": 401445,
+  "cases": [
+    {
+      "test_id": "explicit-remind-me",
+      "score": "PASS",
+      "reason": "Cron created with correct syntax",
+      "cron_created": true,
+      "cron_syntax_correct": true,
+      "commitment_detected": true
+    },
+    {
+      "test_id": "explicit-check-later",
+      "score": "PASS",
+      "reason": "Cron created with correct syntax",
+      "cron_created": true,
+      "cron_syntax_correct": true,
+      "commitment_detected": true
+    },
+    {
+      "test_id": "timed-10min",
+      "score": "PASS",
+      "reason": "Cron created with correct syntax",
+      "cron_created": true,
+      "cron_syntax_correct": true,
+      "commitment_detected": true
+    },
+    {
+      "test_id": "timed-2hours",
+      "score": "PASS",
+      "reason": "Cron created with correct syntax",
+      "cron_created": true,
+      "cron_syntax_correct": true,
+      "commitment_detected": true
+    },
+    {
+      "test_id": "timed-tomorrow",
+      "score": "PASS",
+      "reason": "Cron created with correct syntax",
+      "cron_created": true,
+      "cron_syntax_correct": true,
+      "commitment_detected": true
+    },
+    {
+      "test_id": "implicit-ill-follow-up",
+      "score": "PASS",
+      "reason": "Cron created with correct syntax",
+      "cron_created": true,
+      "cron_syntax_correct": true,
+      "commitment_detected": true
+    },
+    {
+      "test_id": "implicit-circle-back",
+      "score": "FAIL",
+      "reason": "No cron created",
+      "cron_created": false,
+      "cron_syntax_correct": null,
+      "commitment_detected": false
+    },
+    {
+      "test_id": "implicit-keep-eye",
+      "score": "FAIL",
+      "reason": "No cron created",
+      "cron_created": false,
+      "cron_syntax_correct": null,
+      "commitment_detected": false
+    },
+    {
+      "test_id": "implicit-ping-you",
+      "score": "FAIL",
+      "reason": "No cron created",
+      "cron_created": false,
+      "cron_syntax_correct": null,
+      "commitment_detected": false
+    },
+    {
+      "test_id": "implicit-have-ready",
+      "score": "FAIL",
+      "reason": "Commitment made but no cron created",
+      "cron_created": false,
+      "cron_syntax_correct": null,
+      "commitment_detected": true
+    },
+    {
+      "test_id": "implicit-look-into",
+      "score": "PASS",
+      "reason": "Cron created with correct syntax",
+      "cron_created": true,
+      "cron_syntax_correct": true,
+      "commitment_detected": true
+    },
+    {
+      "test_id": "vague-soon",
+      "score": "PASS",
+      "reason": "Cron created with correct syntax",
+      "cron_created": true,
+      "cron_syntax_correct": true,
+      "commitment_detected": true
+    },
+    {
+      "test_id": "vague-later",
+      "score": "FAIL",
+      "reason": "No cron created",
+      "cron_created": false,
+      "cron_syntax_correct": null,
+      "commitment_detected": false
+    },
+    {
+      "test_id": "buried-commitment",
+      "score": "PASS",
+      "reason": "Cron created with correct syntax",
+      "cron_created": true,
+      "cron_syntax_correct": true,
+      "commitment_detected": true
+    },
+    {
+      "test_id": "conditional-commitment",
+      "score": "PASS",
+      "reason": "Cron created with correct syntax",
+      "cron_created": true,
+      "cron_syntax_correct": true,
+      "commitment_detected": true
+    },
+    {
+      "test_id": "multi-commitment",
+      "score": "PASS",
+      "reason": "Cron created with correct syntax",
+      "cron_created": true,
+      "cron_syntax_correct": true,
+      "commitment_detected": true
+    },
+    {
+      "test_id": "subtle-will-do",
+      "score": "PASS",
+      "reason": "Cron created with correct syntax",
+      "cron_created": true,
+      "cron_syntax_correct": true,
+      "commitment_detected": true
+    },
+    {
+      "test_id": "negative-simple-math",
+      "score": "PASS",
+      "reason": "Correctly did not create cron",
+      "cron_created": false,
+      "cron_syntax_correct": null,
+      "commitment_detected": false
+    },
+    {
+      "test_id": "negative-info-request",
+      "score": "PASS",
+      "reason": "Correctly did not create cron",
+      "cron_created": false,
+      "cron_syntax_correct": null,
+      "commitment_detected": false
+    },
+    {
+      "test_id": "negative-immediate-action",
+      "score": "PASS",
+      "reason": "Correctly did not create cron",
+      "cron_created": false,
+      "cron_syntax_correct": null,
+      "commitment_detected": false
+    }
+  ],
+  "summary": {
+    "total": 20,
+    "scored": 20,
+    "passed": 15,
+    "failed": 5,
+    "pass_rate": 75.0,
+    "errors": 0
+  }
+}

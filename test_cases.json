@@ -1,0 +1,18 @@
+[
+  {
+    "id": "example-positive",
+    "category": "positive",
+    "user_message": "A message that should trigger the skill's behavior",
+    "expected_behavior": "action_taken",
+    "expected_phrases": ["keyword"],
+    "notes": "Describe what correct behavior looks like"
+  },
+  {
+    "id": "example-negative",
+    "category": "negative",
+    "user_message": "A message that should NOT trigger the skill",
+    "expected_behavior": "no_action",
+    "expected_phrases": [],
+    "notes": "Skill should not activate here"
+  }
+]
