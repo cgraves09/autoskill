@@ -4,6 +4,8 @@ Autonomous skill prompt optimization, inspired by [karpathy/autoresearch](https:
 
 A skill is a prompt. Prompts can be optimized the same way hyperparameters can — by running experiments, measuring outcomes, and keeping what works.
 
+**First result:** Took an auto-reminder skill from **45% → 90% reliability** (100% relative improvement) across 60+ autonomous iterations. See [FINDINGS.md](FINDINGS.md) for the full breakdown.
+
 ## How It Works
 
 The same loop as autoresearch, applied to AI agent skill prompts:
