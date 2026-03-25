@@ -260,6 +260,10 @@ autoskill/
 - Python 3.8+
 - Git
 
+## License
+
+MIT — see [LICENSE](LICENSE).
+
 ## Credits
 
 - [karpathy/autoresearch](https://github.com/karpathy/autoresearch) — the original pattern
